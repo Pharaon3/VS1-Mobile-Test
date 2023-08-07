@@ -1,0 +1,80 @@
+<template name="App_body">
+  <div id="page-container">
+    <header style="position: sticky; top: 0; background-color: white;">
+      <!-- Bootstrap 5 CSS -->
+      <link rel='stylesheet'
+        href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css'>
+      <!-- Font Awesome CSS -->
+      <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+      <div style="display: flex; gap: 20px; align-items: center;">
+        <img src="https://vs1cloud.com/images/VS1logo.png" alt="" style=" height: 30px; margin: 10px;">
+        <div style="font-size: 22px; font-weight: bold;">VS1Cloud</div>
+      </div>
+      <div style="width: 100%; height: 7px; background-color: #00a3d3;"></div>
+      <form class="form-inline mw-80 m-2 navbar-search" style="display: flex;">
+        <div class="input-group mx-1">
+          <input type="text" class="form-control" placeholder="Global Search ..." style="height: 34px;">
+          <div class="input-group-append">
+            <button class="btn btn-primary" type="button"
+              style="background-color: rgb(0,163,211); border-color: rgb(0,163,211);border-top-right-radius: 0.35rem; border-bottom-right-radius: 0.35rem; height:34px; display: flex; align-items: center;">
+              <i class="fa fa-search"></i>
+            </button>
+          </div>
+        </div>
+        <button class="btn btn-primary mx-1" type="button"
+          style="background-color: rgb(0,163,211); border-color: rgb(0,163,211);border-top-right-radius: 0.35rem; border-bottom-right-radius: 0.35rem; height:34px; display: flex; align-items: center;">
+          <i class="fa fa-camera"></i>
+        </button>
+        <button class="btn btn-primary mx-1" type="button"
+          style="background-color: rgb(0,163,211); border-color: rgb(0,163,211);border-top-right-radius: 0.35rem; border-bottom-right-radius: 0.35rem; height:34px; display: flex; align-items: center;">
+          <i class="fa fa-question-circle"></i>
+        </button>
+      </form>
+        <ul style="list-style-type: none; width: 100%; height: 40px; display: flex; margin: 0px; padding: 0  ; text-align: center;">
+          <li style="background-color: rgb(202, 230, 247); width: 50%; font-size: 1.5em; border: 1px #36cb9f solid;">Main</li>
+          <li style="background-color: rgb(202, 230, 247); width: 50%; font-size: 1.5em; border: 1px #36cb9f solid;">Dashboard</li>
+        </ul>
+    </header>
+    <div id="content-wrap" >
+      {{> yield}}
+    </div>
+    <footer id="footer">
+      <div style="width: 50%; justify-content: center; display: flex; margin-top: 8px;">
+        <img src="img/home-simple.svg" alt="" style="height: 30px;">
+      </div>
+      <div style="width: 50%; justify-content: center; display: flex; margin-top: 8px;">
+        <img src="img/view-normal.svg" alt="" style="height: 30px;">
+      </div>
+    </footer>
+  </div>
+  <style>
+    #page-container {
+      position: relative;
+      min-height: 98vh;
+      z-index: 0;
+    }
+
+    #content-wrap {
+      padding-bottom: 60px;
+      /* Footer height */
+    }
+
+    #footer {
+      display: flex;
+      position: fixed;
+      z-index: 10;
+      bottom: 0;
+      width: 100%;
+      height: 60px;
+      background-color: white;
+      /* Footer height */
+    }
+
+    .search-icon {
+      position: absolute;
+      top: 50%;
+      right: 25px;
+      margin-top: -10px;
+    }
+  </style>
+</template>
